@@ -5,5 +5,5 @@ test("Search function testing", () => {
   expect(search("what")).toContain(newsList[i]);
 });
 test("Sort function testing", () => {
-  expect(sort(type)).toBe(sort());
+  expect(sort(newsList)).toBe(sort());
 });

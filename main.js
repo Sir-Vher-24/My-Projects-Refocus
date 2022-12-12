@@ -19,15 +19,16 @@ export var newsList = [
 export function search(/*inputValue*/) {//Adding Parameter in search(inputValue) to test the function in main.test.js
   //inputValue is the variable that contains the search string
 const inputValue = document.getElementById("search-input").value.toLowerCase();
-//Temporary disable the variable const inputValue to test the search function in main.test.js
+//Temporary disable the variable const inputValue to test the search function in main.test.
+let newArrayValue = [];
+let value = 0;
     for ( var i = 0 ; i < newsList.length ; i ++){
-      if (newsList[i].toLowerCase().includes(inputValue)){
-       newsList[i]
-       console.log(newsList[i])
-      }else{
-        newsList[i] = "";
+      var result = newsList[i].toLowerCase().match(inputValue);
+      if ((result != undefined) || (result != null)){
+       newArrayValue[value] = newsList[i]; value++;
       }
     }
+    newsList = newArrayValue;
   return newsList;
 }
 
@@ -37,6 +38,5 @@ export function sort(type) {
   } else {
     newsList.reverse();
   }
-
   return newsList;
 }
